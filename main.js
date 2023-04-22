@@ -1,9 +1,14 @@
 const container = document.getElementsByClassName("container");
 const cell = document.getElementsByClassName("cell");
 
-function makeRows(howMany){
+const howMany = prompt("Enter no.of cells each side to create grid")
+
+function createGrid(howMany){
     for(let i=0; i<howMany; i++){
-        let row = document.createAttribute('div');
-        container.appendchild
+        for(let j=0; j<howMany; j++){
+            let row = document.createAttribute('div');
+            container.appendchild(row).className('cell');
+        }
     }
 }
+
