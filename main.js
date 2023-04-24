@@ -1,29 +1,24 @@
 // Sets important constants and variables
 
-const container = document.getElementById("container");
-// let rows = document.getElementsByClassName("gridRow");
-let cells = document.getElementsByClassName("cell");
+let container = document.getElementById("container");
 
-let rowNum = 16;
-// Creates a default grid sized 16x16
-function createGrid(rowNum) {
-  for (r = 0; r < rowNum; r++) {
-    for(c = 0; c< rowNum; c++){
-			container.appendChild((makeRows(container.clientWidth/rowNum)));
+let rows = 16;
+let columns = 16;
+
+function createGrid(rows, columns) {
+	for(let i=0; i<columns; ++i){
+		let column  = document.createElement('div');
+		column.className = 'column';
+		for(let j=0; j<rows; ++j){
+			let row = document.createElement('div');
+			row.className = 'row';
+			column.appendChild(row);
 		}
-  }
+		container.appendChild(column);
+	}
 }
 
-// Takes (rows, columns) input and makes a grid
-function makeRows(size) {
-	let row = document.createElement('div');
-	row.classList.add('cell');
-	row.style.width = `${size}px`;
-	row.style.height = `${size}px`;
-	return row;
-};
-
-createGrid(rowNum);
+createGrid(rows, columns);
 
 
 
