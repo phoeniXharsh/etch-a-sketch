@@ -12,9 +12,12 @@
   padding: 16px;
 }
 
-/* .row:hover{
-  background-color: black;
-} */
-/* .column:hover{
-  background-color: black;
-} */
+#newGrid{
+  display: flex;
+  justify-content: center;
+}
+
+#new-grid-button {
+  margin: 16px;
+  padding: 8px;
+}

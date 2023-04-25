@@ -1,9 +1,16 @@
 // Sets important constants and variables
 
 let container = document.getElementById("container");
+let newGridButton = document.getElementById("new-grid-button");
 
-let rows = 16;
-let columns = 16;
+
+newGridButton.addEventListener('click', () =>{
+	console.log("Before prompt");
+	let rowsAndCols = window.prompt("Enter grid size: (Max Size is 100x100");
+	console.log("After prompt");
+
+	createGrid(rowsAndCols, rowsAndCols);
+})
 
 function createGrid(rows, columns) {
 	for(let i=0; i<columns; ++i){
@@ -13,13 +20,18 @@ function createGrid(rows, columns) {
 			let row = document.createElement('div');
 			row.className = 'row';
 			column.appendChild(row);
+
+			row.addEventListener('mouseover', () => {
+				row.style.backgroundColor = 'black';
+			})
+			
+			row.addEventListener('mouseout', () => {
+				row.style.backgroundColor = 'grey';
+			})
 		}
 		container.appendChild(column);
 	}
 }
-
-createGrid(rows, columns);
-
 
 
 
