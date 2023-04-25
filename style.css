@@ -1,5 +1,13 @@
 #container {
   display: flex;
+  justify-content: center;
+  max-width: 960px;
+  max-height: 960px;
+  /*this line centers the grid by assigning the 
+  horizontal margin to auto */
+  margin: 0 auto;
+  border: 1px solid orange;
+  padding: 960px;
 }
 
 .column{
@@ -20,4 +28,18 @@
 #new-grid-button {
   margin: 16px;
   padding: 8px;
+}
+
+#clear-grid-button{
+  margin: 16px;
+  padding: 8px;
+}
+
+#eraser-button {
+  margin: 16px;
+  padding: 8px;
+}
+
+.header{
+  text-align: center;
 }
